@@ -1,0 +1,70 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<script th:src="@{http://localhost:8081/pay/js/jquery.min.js}" type="text/javascript"></script>
+
+
+    <head>
+        
+    </head>
+    
+    <body>
+        
+    <form id="payForm" action="http://localhost:8081/pay/alipay/goAlipay" method="post">
+    	<input type="hidden" name="orderId"  th:attrappend="value=${order.id }" />
+        <table>
+        	<tr>
+        		<td>
+        			订单编号: <span th:text=" ${order.id } " >trade_no</span>
+        		</td>
+        	</tr>
+        		<td>
+        			产品名称: <span th:text=" ${p.name } " >trade_no</span>
+        		</td>
+        	<tr>
+        	</tr>
+        		<td>
+        			订单价格: <span th:text=" ${order.orderAmount } " >trade_no</span>
+        		</td>
+        	<tr>
+        	</tr>
+        		<td>
+        			购买个数：<span th:text=" ${order.buyCounts } " >trade_no</span>
+        		</td>
+        	</tr>
+        	</tr>
+        		<td>
+        			<input type="submit" value="前往支付宝进行支付">
+        			
+        			<input type="button" value="微信扫码支付" onclick="wxpayDisplay()">
+        		</td>
+        	</tr>
+        </table>
+    </form>
+    
+    	
+        <input type="hidden" id="hdnContextPath" name="hdnContextPath" value="http://localhost:8081/pay"/>
+    </body>
+
+<script type="text/javascript">
+
+    function wxpayDisplay() {
+        debugger;
+
+        var hdnContextPath = $("#hdnContextPath").val();
+
+        $("#payForm").attr("action", hdnContextPath + "/wxpay/createPreOrder");
+        $("#payForm").submit();
+    }
+
+    // 	$(document).ready(function() {
+
+    // 		var hdnContextPath = $("#hdnContextPath").val();
+
+    // 	});
+
+
+</script>
+</html>
+
+
+

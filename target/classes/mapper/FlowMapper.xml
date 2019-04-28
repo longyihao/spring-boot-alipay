@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.funtl.spring.boot.alipay.mapper.FlowMapper">
+  <resultMap id="BaseResultMap" type="com.funtl.spring.boot.alipay.domain.Flow">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="flow_num" jdbcType="VARCHAR" property="flowNum" />
+    <result column="order_num" jdbcType="VARCHAR" property="orderNum" />
+    <result column="product_id" jdbcType="VARCHAR" property="productId" />
+    <result column="paid_amount" jdbcType="VARCHAR" property="paidAmount" />
+    <result column="paid_method" jdbcType="INTEGER" property="paidMethod" />
+    <result column="buy_counts" jdbcType="INTEGER" property="buyCounts" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+</mapper>

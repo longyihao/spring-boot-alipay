@@ -1,0 +1,33 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<body>
+
+
+<table>
+    <tr>
+        <th>
+            产品编号
+        </th>
+        <th>
+            产品名称
+        </th>
+        <th>
+            产品价格
+        </th>
+        <th>
+            操作
+        </th>
+    </tr>
+    <tr th:each="prod: ${pList}" >
+        <td th:text="${prod.id}">Onions</td>
+        <td th:text="${prod.name}">2.41</td>
+        <td th:text="${prod.price}">yes</td>
+        <td ><a href="details.html" th:href="@{/alipay/goConfirm(productId=${prod.id})}">购买</a></td>
+    </tr>
+</table>
+ </body>
+</html>
